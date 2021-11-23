@@ -10,13 +10,12 @@ This code sample demonstrates monitoring Geotriggers in the background on iOS.
 ## Instructions
 
 1. Fork and then clone the repo.
-2. Set your API Key* in the `AppDelegate.Swift::application()` method.
+2. Set your API Key* in the `AppDelegate.application(_:didFinishLaunchingWithOptions:)` method.
 3. Ensure that you have set up for background location updates:
   * Ensure you have permission to access the user's current location while the app is in the background by adding this [Property List Key](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription). Read [here](https://developer.apple.com/documentation/corelocation/choosing_the_location_services_authorization_to_request) about choosing the location services authorization to request.
   * Turn on "Location Updates" in Background Modes in your project. If you don't see Background Modes under Signing & Capabilites then you need to add that capability using the "+ Capability" button under Signing & Capabilites.
-  * Ensure you have set the CLLocationManager.allowsBackgroundLocationUpdates property to true.
-    * In the Cocoa API, the CLLocationManager is present under AGSCLLocationDataSource.locationManager
-    * In the Swift API, you can set the property using SystemLocationDataSource.allowsBackgroundLocationUpdates
+  * Ensure you have set the `CLLocationManager.allowsBackgroundLocationUpdates` property to true.
+    * In the Cocoa API, the `CLLocationManager` is present under `AGSCLLocationDataSource.locationManager`
 3. Run the app and accept permission requests.
 4. Tap on the map to create a graphic which will be used for a fence with a 10 meter buffer.
 5. Move the app to the background and observe that notifications are received when the device enters the fence's radius.
@@ -43,6 +42,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
 
 ## Licensing
+
 Copyright 2021 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
